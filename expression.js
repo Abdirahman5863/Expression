@@ -50,7 +50,7 @@ function ageVerify(){
 const person1 = {age:20};
 const person2 = {age:17};
 ageVerify.call(person1);
-// ageVerify.call(person2);
+ageVerify.call(person2);
 
 
 // Default Binding
@@ -60,3 +60,16 @@ function verifyAge(){
     return this.age;
 }
 console.log(verifyAge());
+
+
+
+// Arrow binding
+
+const someone= {
+    name:'ram',
+    age:23,
+    greet :( ) => {
+        return `Hello, you are ${this.name} and you are ${this.age} yaers old`
+    }
+}
+console.log(someone.greet())
